@@ -43,7 +43,7 @@ Examples/
 │   ├── speaker_touch/          タッチでテルミン風
 │   ├── melody/                 ドレミファソラシド
 │   ├── tof_actuator/           ToF → 画面色 + 警告音
-│   └── angle_to_servos/        Unit Angle → 8Servos Unit (CH0/CH1)
+│   └── angle_to_servos/        Unit Angle → Servo Kit 360° (CH0/CH1, 速度制御)
 │
 ├── lecture11_ble/              第11回: BLE 通信
 │   ├── m5stack_ble_peripheral/ M5 側: BLE ペリフェラル(NimBLE)
