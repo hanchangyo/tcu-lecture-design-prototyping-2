@@ -23,6 +23,7 @@
 | `M5Unified` | M5Stack 統合 | すべて |
 | `VL53L0X` (Pololu) | ToF 距離センサ | `tof_basic`, `tof_actuator`, `program_skeleton` |
 | `NimBLE-Arduino` | BLE ペリフェラル | `m5stack_ble_peripheral`, `program_skeleton` |
+| `M5Unit-8Servo` | 8Servos Unit (I2C) | `angle_to_servos` |
 
 ## ディレクトリ構成
 
@@ -41,7 +42,8 @@ Examples/
 │   ├── tof_basic/              ToF 距離センサ (Grove Port A)
 │   ├── speaker_touch/          タッチでテルミン風
 │   ├── melody/                 ドレミファソラシド
-│   └── tof_actuator/           ToF → 画面色 + 警告音
+│   ├── tof_actuator/           ToF → 画面色 + 警告音
+│   └── angle_to_servos/        Unit Angle → 8Servos Unit (CH0/CH1)
 │
 ├── lecture11_ble/              第11回: BLE 通信
 │   ├── m5stack_ble_peripheral/ M5 側: BLE ペリフェラル(NimBLE)
