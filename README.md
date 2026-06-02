@@ -1,6 +1,6 @@
 # デザインプロトタイピング(2) サンプルコード集
 
-東京都市大学「デザインプロトタイピング(2)」後半パート(第9〜12回)のスライドに登場する Arduino / Web Bluetooth のサンプルコードをまとめたものです。
+東京都市大学「デザインプロトタイピング(2)」後半パート(第9〜13回)のスライドに登場する Arduino / Web Bluetooth のサンプルコードをまとめたものです。
 
 ## 対象ハードウェア
 
@@ -23,7 +23,7 @@
 | `M5Unified` | M5Stack 統合 | すべて |
 | `VL53L0X` (Pololu) | ToF 距離センサ | `tof_basic`, `tof_actuator`, `program_skeleton` |
 | `NimBLE-Arduino` | BLE ペリフェラル | `m5stack_ble_peripheral`, `program_skeleton` |
-| `M5Unit-8Servo` | 8Servos Unit (I2C) | `angle_to_servos` |
+| `M5Unit-8Servo` | 8Servos Unit (I2C) | `angle_to_servos`, `tof_to_servos_360` |
 
 ## ディレクトリ構成
 
@@ -51,9 +51,22 @@ Examples/
 │       ├── index.html
 │       └── app.js
 │
-└── lecture12_team_project/     第12回: チーム制作の骨格
-    └── program_skeleton/       センサ → 処理 → 表示 + BLE 送信の雛形
+├── lecture12_team_project/     第12回: チーム制作の骨格
+│   └── program_skeleton/       センサ → 処理 → 表示 + BLE 送信の雛形
+│
+└── lecture13_pa_hub/           第13回: PaHub で I2C 機器を複数接続
+    └── tof_to_servos_360/      ToF 距離 → Servo Kit 360° (CH0/CH1)
 ```
+
+## Unit PaHub の配線（第13回）
+
+```
+Port A ── PaHub (0x70)
+           ├ CH0: Unit 8Servos  → Servo 360° ×2 (CH0, CH1)
+           └ CH1: Unit ToF
+```
+
+PaHub の CH 番号は実機の差し込み位置に合わせて `.ino` 先頭の `PAHUB_CH_SERVOS` / `PAHUB_CH_TOF` を変更してください。
 
 ## Web Bluetooth 受信の動かし方
 
